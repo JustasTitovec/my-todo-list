@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Button, FormControl, InputLabel, Input } from '@material-ui/core';
 import Todo from './Todo.js';
-import db from './firebase.js';
+import db from './firebase';
 import firebase from 'firebase';
 
 function App() {
@@ -14,7 +14,9 @@ function App() {
       .orderBy('timestamp', 'desc')
       .onSnapshot(snapshot => {
         // paima visus duomenis is duomenu bazes
-        setTodos(snapshot.docs.map(doc => doc.data().text));
+        setTodos(
+          snapshot.docs.map(doc => ({ id: doc.id, todo: doc.data().text }))
+        );
       });
   }, []);
 
@@ -34,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <h1>My Todo list</h1>
-      <form>
+      <form className="todo__form">
         <FormControl>
           <InputLabel>Write a Todo</InputLabel>
           <Input
@@ -52,12 +54,14 @@ function App() {
         >
           Add Todo
         </Button>
+      </form>
+      <div className="todo__list">
         <ul>
           {todos.map(todo => (
-            <Todo text={todo} />
+            <Todo todo={todo} />
           ))}
         </ul>
-      </form>
+      </div>
     </div>
   );
 }
