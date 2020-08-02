@@ -1,17 +1,18 @@
 .App {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
-}
-
-.todo__list {
-  width: 800px;
+  position: relative;
 }
 
 .todo__form {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
+}
+
+.todo__list {
+  display: flex;
+  width: 500px;
+  margin-top: 20px;
 }

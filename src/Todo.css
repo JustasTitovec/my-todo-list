@@ -1,4 +1,23 @@
-.todo__list {
+/* .todo__list {
   margin-left: 100px;
   text-align: center;
+} */
+
+.todo__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid lightgrey;
+  width: 400px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.todo__edit {
+  display: flex;
+  align-items: center;
+}
+
+.todo__delete:hover {
+  cursor: pointer;
 }
