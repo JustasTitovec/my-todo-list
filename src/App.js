@@ -57,8 +57,8 @@ function App() {
       </form>
       <div className="todo__list">
         <ul>
-          {todos.map(todo => (
-            <Todo todo={todo} />
+          {todos.map((todo, i) => (
+            <Todo todo={todo} key={i} />
           ))}
         </ul>
       </div>

@@ -7,17 +7,20 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   paper: {
-    position: 'relative',
+    position: 'absolute',
     width: 400,
-    backgroundColor: '#F0FFFF',
-    border: '2px solid #000'
+    backgroundColor: '#FFFFFF',
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3)
   }
-});
+}));
 
 function Todo(props) {
   const classes = useStyles();
+
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState('');
 
@@ -41,12 +44,8 @@ function Todo(props) {
 
   return (
     <>
-      <Modal
-        className={classes.paper}
-        open={open}
-        onClose={e => setOpen(false)}
-      >
-        <div>
+      <Modal className="todo__modal" open={open} onClose={e => setOpen(false)}>
+        <div className={classes.paper}>
           <h1>{props.todo.todo}</h1>
           <input
             placeholder={props.todo.todo}
@@ -60,7 +59,7 @@ function Todo(props) {
       <div className="todo__item">
         <div>
           <ListItem>
-            <ListItemText primary={props.todo.todo} secondary="Todo 🔥" />
+            <ListItemText primary={props.todo.todo} secondary="Todo ✏️" />
           </ListItem>
         </div>
         <div className="todo__edit">

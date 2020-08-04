@@ -4,7 +4,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  position: relative;
 }
 
 .todo__form {
@@ -12,7 +11,17 @@
 }
 
 .todo__list {
-  display: flex;
-  width: 500px;
-  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo__list ul {
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 992px) {
+  .App {
+    width: 300px;
+  }
 }

@@ -1,16 +1,19 @@
-/* .todo__list {
-  margin-left: 100px;
-  text-align: center;
-} */
-
 .todo__item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 1px solid lightgrey;
-  width: 400px;
+  width: 500px;
   margin-top: 20px;
   border-radius: 5px;
+}
+
+.todo__modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 200px;
+  /* width: 100%; */
 }
 
 .todo__edit {
@@ -20,4 +23,16 @@
 
 .todo__delete:hover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+  .todo__item {
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .todo__item {
+    width: 300px;
+  }
 }
