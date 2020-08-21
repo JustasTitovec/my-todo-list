@@ -29,10 +29,18 @@
   .todo__item {
     width: 450px;
   }
+
+  .todo__modal {
+    width: 300px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .todo__item {
+    width: 300px;
+  }
+
+  .todo__modal {
     width: 300px;
   }
 }
